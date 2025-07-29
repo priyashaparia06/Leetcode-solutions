@@ -1,16 +1,24 @@
-class sqrt{
-    public int mySqrt(int x) {
-        if (x == 0 || x == 1) return x;
-        int low = 1, high = x, ans = 0;
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            if (mid <= x / mid) {
-                ans = mid;
-                low = mid + 1;
-            } else {
-                high = mid - 1;
+class sqrt 
+{
+public:
+    int mySqrt(int x) 
+    {
+        if (x < 2) 
+        {
+            return x;
+        }
+        int result = 0;
+        for (long long int i = 1; i <= x; i++)
+            {
+            if (i * i == x) 
+            {
+                return i;
+            } 
+            else if (i * i > x) 
+            {
+                return i - 1;
             }
         }
-        return ans;
+        return result;
     }
-}
+};
